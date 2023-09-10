@@ -1,0 +1,32 @@
+<h1>Shopping Product Page</h1>
+
+<h5>Name: </h5>
+<p>Aulia Rizqi Hidayatunnisa</p> <!-- Ubahlah sesuai dengan nama kamu -->
+<h5>Class: </h5>
+<p>PBP B</p> <!-- Ubahlah sesuai dengan kelas kamu -->
+<h5>Student NPM: </h5>
+<p>2206817881</p>
+
+<p>{{result}}</p>
+
+  <table border="2", bordercolor="blue">
+    <tr>
+      <th>name</th>
+      <th>amount</th>
+      <th>description</th>
+      <th>price</th>
+     
+    </tr>
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for barang in list_barang %}
+        <tr>
+            <th>{{barang.name}}</th>
+            <th>{{barang.amount}}</th>
+            <th>{{barang.description}}</th>
+            <th>{{barang.price}}</th>
+            
+        </tr>
+    {% endfor %}
+  </table>
+
+ 
