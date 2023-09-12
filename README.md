@@ -61,6 +61,12 @@ Jawab: Virtual environment berguna untuk mengisolasi package serta dependencies 
 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 
 Jawab: MVT adalah singkatan dari Model-View-Template. MVT adalah sebuah konsep arsitektur yang digunakan dalam pengembangan web untuk memisahkan komponen-komponen utama dari sebuah aplikasi. Konsep ini memungkinkan pengembang web untuk mengorganisasi dan mengelola kode dengan lebih terstruktur.
+
+
 MVC adalah singkatan dari Model-View-Controller yaitu pola desain yang memisahkan aplikasi menjadi tiga komponen utama: Model (logika bisnis dan data), View (tampilan yang diperlihatkan kepada pengguna), dan Controller (menerima input dari pengguna dan mengirimkannya ke Model atau View).
+
+
 MVVM adalah singkatan dari Model-View-ViewModel yaitu pola desain yang sering digunakan dalam pengembangan aplikasi berbasis antarmuka pengguna (UI). Model mengurus data, View adalah tampilan yang diperlihatkan kepada pengguna, dan ViewModel adalah perantara antara Model dan View yang mengatur tampilan dan pembaruan data.
-Perbedaan utama antara ketiganya terletak pada peran dan tanggung jawab dari komponen View. Dalam MVC, View memiliki sejumlah logika presentasi. Dalam MVT (terutama dalam konteks Django), View memiliki kemiripan dengan Template dalam MVC. Sementara dalam MVVM, View tidak memiliki tanggung jawab dalam hal logika bisnis, dan ViewModel berfungsi sebagai penghubung yang mengatur tampilan serta pembaruan data. MVVM biasanya diterapkan dalam pengembangan antarmuka pengguna yang lebih kompleks, seperti aplikasi berbasis SPA (Single Page Application).
+
+
+Perbedaan utama antara MVC (Model-View-Controller), MVT (Model-View-Template), dan MVVM (Model-View-ViewModel) adalah dalam cara mereka mengatur dan mengelola komponen-komponen inti dalam pengembangan perangkat lunak. MVC memisahkan aplikasi menjadi Model (logika bisnis), View (tampilan), dan Controller (pengendali) dengan pengendali yang menghubungkan Model dan View. MVT, yang umumnya digunakan dalam kerangka kerja web Django, memisahkan Model (data), View (logika tampilan), dan Template (tampilan) dengan Template sebagai pengganti Controller. Sedangkan MVVM, yang sering digunakan dalam pengembangan aplikasi berbasis antarmuka pengguna (UI), memisahkan Model (data), View (tampilan), dan ViewModel (logika tampilan) dengan ViewModel berperan sebagai perantara antara Model dan View.
