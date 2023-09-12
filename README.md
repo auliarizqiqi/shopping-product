@@ -11,46 +11,46 @@ Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 Jawab:
-- Membuat Proyek Django Baru:
+- Membuat Proyek Django baru:
 
 Setelah membuat repository baru di github dan menjalankan proses konfigurasi dan sebagainya, selanjutnya untuk membuat proyek django yang baru adalah dengan membuka terminal atau command prompt dan buat proyek Django baru dengan perintah: django-admin startproject namaprojek.
 
-- Membuat Aplikasi 'main':
+- Membuat Aplikasi dengan nama 'main':
 
 Untuk membuat aplikasi main, buka terminal dan masuk ke direktori proyek Django yang baru dibuat.
 Lalu jalankan terminal dengan perintah: python manage.py startapp main, lalu mendaftarkan aplikasi main ke dalam proyek pada berkas settings.py
 
-- Melakukan Routing:
+- Melakukan Routing pada proyek:
 
 Membuat berkas urls.py dalam proyek Django dan tambahkan routing untuk aplikasi 'main'dengan menambahkan beberapa kode pada berkas urls.py
 Pastikan telah menghubungkan URL dengan tampilan main dengan mengimpor fungsi include dari django.urls
 
--Membuat Model 'Item':
+- Membuat Model dengan nama 'Item':
 
 Membuka berkas models.py dalam aplikasi 'main' lalu buat model item dengan atribut yang sesuai dengan permintaan checklist, seperti name, amount, description. Isi berkas tersebut dengan kode untuk mengimpor models dari django.db. Seetelah itu, membuat dan mengaplikasikan migrasi model dengan menjalankan perintah python manage.py makemigrations dan python manage.py migrate.
 
 
--Membuat Fungsi di 'views.py':
+- Membuat Fungsi pada 'views.py':
 
 Buka berkas views.py dalam berkas aplikasi 'main' dan menambahkan baris-baris impor from django.shortcuts import render di bagian paling atas berkas untuk mengintegrasikan komponen MVT. Lalu tambahkan fungsi show_main di bawah impor untuk mengatur permintaan HTTP dan mengembalikan tampilan yang sesuai.
 
--Melakukan Routing Aplikasi 'main':
+- Membuat sebuah Routing Aplikasi 'main':
 
 Buat berkas urls.py dalam direktori 'main'dan isi dengan barisan kode yang sesuai. Tambahkan rute url untuk mengarahkan ke tampilan main di dalam variabel urlpatterns.
 Lalu jalankan proyek Django dengan perintah python manage.py runserver. Buka website loca;host di browser untuk melihat halaman yang sudah dibuat.
 
--Deployment ke Adaptable:
+- Deployment ke Adaptable:
 
 Login pada akun Adaptable dan klik tombol New App untuk membuat aplikasi. Lalu hubungkan dengan repository pada github yang akan digunakan, pilih template deployment, dan pilih tipe baris data yang akan digunakan. Sesuaikan versi python, masukkan perintah pada bagian start command, dan masukkan nama aplikasi yang akan menjadi nama domain situs web aplikasi. Kemudian klik Deploy App untuk memulai proses deployment aplikasi.
 
--Membuat README.md:
+- Membuat README.md:
 
 Buat berkas README.md yang berisi tautan menuju aplikasi yang telah di-deploy ke Adaptable.
 Jawab pertanyaan-pertanyaan yang tercantum dalam checklist dengan jelas.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
-Jawab: ![Gambar Bagan Aulia Rizqi](Gambar Bagan Request Client.jpg)
+Jawab: ![Gambar Bagan Aulia Rizqi](Bagan_AuliaRizqi.jpg)
 
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
