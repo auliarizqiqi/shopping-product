@@ -4,7 +4,8 @@ Kelas : PBP B
 
 NPM : 2206817881
 
-Tautan aplikasi Adaptable : 
+Tautan aplikasi Adaptable : https://my-app-shopping-product.adaptable.app
+Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -49,7 +50,8 @@ Jawab pertanyaan-pertanyaan yang tercantum dalam checklist dengan jelas.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
-Jawab: 
+Jawab: ![Gambar Bagan Aulia Rizqi](Gambar Bagan Request Client.jpg)
+
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
