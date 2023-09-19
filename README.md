@@ -66,7 +66,7 @@ Gambar Postman - XML by ID 1
 
 
 Gambar Postman - XML by ID 2
-![Alt Text](/Gambar_Postman/Postman_JSON_ID2_AuliaRizqi.png)
+![Alt Text](/Gambar_Postman/Postman_XML_ID2_AuliaRizqi.png)
 
 
 
