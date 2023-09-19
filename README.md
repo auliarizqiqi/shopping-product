@@ -48,7 +48,11 @@ Konfigurasikan URL routing di Django untuk setiap view yang telah dibuat dengan 
 Buka berkas README.md pada direktori lokal dan jawab pertanyaan-pertanyaan di berkas tersebut.
 
 - Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
-ss
+
+
+Gambar Postman - HTML 
+![Alt Text](/Gambar_Postman/Postman_HTML_AuliaRizqi.png)
+
 
 - Melakukan add-commit-push ke GitHub.
 Tambahkan semua perubahan ke repositori Github menggunakan perintah git add, git commit, dan git push. Pastikan projek di Github sudah terupdate.
