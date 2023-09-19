@@ -54,6 +54,57 @@ Gambar Postman - HTML
 ![Alt Text](/Gambar_Postman/Postman_HTML_AuliaRizqi.png)
 
 
+
+Gambar Postman - XML
+![Alt Text](/Gambar_Postman/Postman_XML_AuliaRizqi.png)
+
+
+
+Gambar Postman - XML by ID 1
+![Alt Text](/Gambar_Postman/Postman_XML_ID1_AuliaRizqi.png)
+
+
+
+Gambar Postman - XML by ID 2
+![Alt Text](/Gambar_Postman/Postman_JSON_ID2_AuliaRizqi.png)
+
+
+
+Gambar Postman - XML by ID 3
+![Alt Text](/Gambar_Postman/Postman_XML_ID3_AuliaRizqi.png)
+
+
+
+Gambar Postman - XML by ID 4
+![Alt Text](/Gambar_Postman/Postman_XML_ID4_AuliaRizqi.png)
+
+
+
+Gambar Postman - JSON 
+![Alt Text](/Gambar_Postman/Postman_JSON_AuliaRizqi.png)
+
+
+
+Gambar Postman - JSON by ID 1
+![Alt Text](/Gambar_Postman/Postman_JSON_ID1_AuliaRizqi.png)
+
+
+
+Gambar Postman - JSON by ID 2
+![Alt Text](/Gambar_Postman/Postman_JSON_ID2_AuliaRizqi.png)
+
+
+
+Gambar Postman - JSON by ID 3
+![Alt Text](/Gambar_Postman/Postman_JSON_ID3_AuliaRizqi.png)
+
+
+
+Gambar Postman - JSON by ID 4
+![Alt Text](/Gambar_Postman/Postman_JSON_ID4_AuliaRizqi.png)
+
+
+
 - Melakukan add-commit-push ke GitHub.
 Tambahkan semua perubahan ke repositori Github menggunakan perintah git add, git commit, dan git push. Pastikan projek di Github sudah terupdate.
 
