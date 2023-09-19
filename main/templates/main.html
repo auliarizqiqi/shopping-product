@@ -1,3 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+  
+  h1 {
+      color: #007BFF ;
+  }
+  .content-container {
+      background-color: #FFC0CB; 
+      padding: 20px; 
+      border: 1px solid 
+  }
+</style>
+
+<div class="content-container">
+
 <h1>Shopping Product Page</h1>
 
 <p><strong>Apa Itu Shopping Product?</strong></p>
@@ -18,35 +35,41 @@
 <h5>Student NPM: </h5>
 <p>2206817881</p>
 
-
+ {% comment %} Hitung jumlah total item di sini (misalnya, dalam variabel total_items) {% endcomment %}
+ {% with total_items=products|length %}
+ <p>Hore! Kamu punya {{ total_items }} barang untuk di-checkout sekarangg!.</p>
+ {% endwith %}
 
   <table border="2", bordercolor="blue">
     <tr>
       <th>Name</th>
       <th>Amount</th>
-      <th>Description</th>
       <th>Price</th>
+      <th>Description</th>
+      <th>Date Added</th>
      
     </tr>
   </tr>
+
+  {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+
+  {% for product in products %}
   <tr>
-      <td>Hoodie</td>
-      <td>10</td>
-      <td>Hoodie bahan Fleece Cotton tersedia warna merah dan kuning</td>
-      <td>Rp149.999</td>
-  </tr>
-  <tr>
-      <td>Jaket Bomber</td>
-      <td>25</td>
-      <td>Jaket berbahan Taslan tersedia warna hitam dan abu-abu</td>
-      <td>Rp179.999</td>
-  </tr>
-  <tr>
-      <td>Sweater</td>
-      <td>20</td>
-      <td>Sweater berbahan Fleece Cotton tersedia warna beige</td>
-      <td>Rp169.999</td>
-  </tr>
+    <td>{{product.name}}</td>
+    <td>{{product.amount}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.date_added}}</td>
+</tr>
+{% endfor %}
 </table>
 
- 
+<br />
+
+<a href="{% url 'main:create_product' %}">
+<button>
+Add New Product
+</button>
+</a>
+
+{% endblock content %}
