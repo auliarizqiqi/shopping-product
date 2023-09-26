@@ -8,6 +8,64 @@ Tautan aplikasi Adaptable : https://my-app-shopping-product.adaptable.app
 
 Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 
+TUGAS 4 - PBP
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+Jawab: UserCreationForm adalah impor formulir bawaan yang memudahkan pembuatan formulir pendaftaran pengguna dalam aplikasi web. Dengan formulir ini, pengguna baru dapat mendaftar dengan mudah di situs web Anda tanpa harus menulis kode dari awal.
+
+Kelebihan: 
+- Tidak perlu mendefinisikan form pendaftaran dari awal sehingga dapat mempercepat proses pengembangan aplikasi
+- Form ini sudah memiliki validasi bawaaan untuk field-field yang ada, seperti memeriksa apakah nama user sudah atau belum
+
+
+Kekurangan:
+- Perlu membuat form custom sendiri jika ingin memberi field tambahan walaupun sudah disediakan form untuk kebutuhan dasar
+- Hanya menangani pendaftaran user, jika ingin fitur lain seperti konfirmasi email harus menambahkannya sendiri
+
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+Jawab:
+- Autentikasi adalah proses verifikasi identitas pengguna. Dalam aplikasi web, hal ini biasanya melibatkan pemeriksaan kredensial pengguna (misalnya, nama pengguna dan kata sandi) terhadap database pengguna terdaftar. Jika kredensial yang diberikan cocok dengan pengguna di database, pengguna tersebut dianggap diautentikasi. Sistem autentikasi bawaan Django menyediakan kerangka kerja yang kuat dan fleksibel untuk mengelola otentikasi pengguna. Ini mencakup Usermodel untuk menyimpan informasi pengguna, serta tampilan dan formulir untuk menangani registrasi pengguna, login, dan manajemen kata sandi. Autentikasi penting untuk membedakan atau memastikan apakah user tersebut sama atau tidak dan memmastikan informasi sensitif hanya dapat diakses oleh user yang sah.
+
+- Otorisasi adalah proses menentukan apa yang diperbolehkan user melakukan sesuatu ketika mereka berhasil diotentikasi. Setelah pengguna diautentikasi, langkah selanjutnya adalah menentukan apa yang boleh mereka lakukan dalam aplikasi. Proses ini dikenal sebagai otorisasi. Otorisasi biasanya didasarkan pada peran pengguna, grup, atau izin yang menentukan tindakan apa yang dapat dilakukan pengguna. Sistem otorisasi Django dibangun di atas sistem autentikasinya dan memungkinkan pengembang untuk mengontrol akses ke berbagai bagian aplikasi dengan mudah. Django menyediakan satu set izin default untuk model bawaannya (misalnya, menambah, mengubah, menghapus) dan mengizinkan pengembang untuk membuat izin khusus untuk model mereka sendiri.Dalam django menyediakan sistem otorisasi melalui model Permission dan sistem Group. Tanpa otorisasi semua user memungkinkan memiliki akses ke dalam semua bagian pada aplikasi sehingga dapat menimbulkan resiko keamanan dan privasi.
+
+sumber: https://vegibit.com/understanding-djangos-authentication-and-authorization-system/
+
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+Jawab: Cookies adalah potongan kecil data yang dikirim dari server ke browser user dan disimpan di sisi klien. Ketika browser mengakses server yang sama di masa depan, browser akan mengirim kembali cookie ini ke server.
+Django menggunakan cookies untuk mengimplementasikan pengelolaan sesi secara default yang digunakan untuk mengelola sesi pengguna ddengan cara mengidentifikasi pengguna mengakses situs web, lalu server akan mengambil Session ID yang disimpan dalam cookie. Dengan cara ini, server dapat mengidentifikasi pengguna ketika membuat permintaan selanjutnya. Pada permintaan berikutnya, situs web mengirimkan cookie Session ID ke server. Django kemudian menggunakan cookie ini untuk mengambil data sesi dan membuatnya dapat diakses dalam kode. 
+
+sumber: https://betterprogramming.pub/managing-sessions-in-django-92ef72db4c63
+
+
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Jawab: Cookies yang digunakan dengan benar dan sesuai maka akan aman. Cookies dibuat untuk menyimpan data kecil di browser dan mengirimkannya kembali ke server web. Data yang disimpan dalam cookies tidak dapat diakses oleh pihak ketiga jika dienkripsi atau diberi sandi. Risiko potensial yang harus diwaspadai adalah jika cookies mengandung informasi sensitif seperti data pribadi, oleh karena itu penting untuk memastikan tidak ada informasi sensitif yang tidak dienkripsi. 
+
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Jawab: 
+
+Checklist untuk tugas ini adalah sebagai berikut:
+
+- Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+Jalankan virtual environment terlebih dahulu, lalu buka voews.py untuk membuat fungsi register yang menerima parameter request. Tambahkan beberapa import pada bagian paling atas termasuk import UserCreationForm untuk memudahkan pembuatan formulir. Tambahkan potongan kode ke dalam fungsi register, import fungsi yang dibuat, dan tambahkan path url. Lalu untuk membuat fungsi login buka views.py dan buat fungsi yang menerima parameteer request. Tambahkan import authenticate dan login pada bagian paling atas. Lalu tambahkan potongan kode ke dalam fungsi login untuk mengauntentikasi user yang ingin login, buat berkash HTML yang diisi dengan template untuk tampilan meminta user log in. Import fungsi yang sudah dibuat dan tambahkan path url untuk mengakses fungsi yang sudah diimpor. Kemudian untuk membuat fungsi logout buka views.py dan buatlah fungsi yang menerima parameter request, tambahkan import logout pada bagian paling atas, tambahkan potongan kode ke dalam fungsi logout yang sudah dibuat untuk melakukan mekanisme logout. Tambahkan potongan kode di dalam berkas main.html yang ada pada folder main/templates (setelah hyperlink tag). Lalu buka urls.py dan impor fungsi yang dibuat dan tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor.
+
+- Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+Buat dua akun user, pada tugas ini misalnya saya membuat akun dengan username "kiki" dan "auliarizqi" dengan tiga dummy data untuk setiap akun dengan menambahkan add product
+
+- Menghubungkan model Item dengan User.
+Buka models.py yang ada pada subdirektori main dan tambahkan kode untuk mengimpor model. Pada model Product yang sudah dibuat, tambahkan potongan kode untuk menghubungkan satu produk dengan satu user melalui sebuah relationship, dimana sebuah produk pasti terasosiasikan dengan seorang user. Buka views.py yang ada pada subdirektori main, dan ubah potongan kode pada fungsi create_product. Ubah fungsi show_maim agar dapat menampilkan objek Product yang terasosiasikan dengan pengguna yang sedang login. Simpan semua perubahan dan lakukan migrasi model dan lakukan python manage.py migrate untuk mengaplikasikan migrasi yang dilakukan pada poin sebelumnya.
+
+- Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+Menerapkan cookies untuk last login untuk menyimpan informasi seperti waktu last login user dengan mengubah fungsi logout_user menjadi potongan kode yang sesuai dan mengandung kode response.delete_cookie('last_login') yang berfungsi untuk menghapus cookie last_login saat pengguna melakukan logout. Buka berkas main.html dan tambahkan potongan kode di antara tabel dan tombol logout untuk menampilkan data last login. Untuk dapat melihat data cookies last_login, dapat mengakses fitur inspect elemen dan membuka bagian Application/Storage. Lalu klik bagian cookies dan dapat lihat data cookies yang tersedia. Selain last_login, kita juga dapat melihat data sessionid dan csrftoken. Jika kita melakukan logout dan membuka riwayat cookie, maka cookie yang telah dibuat sebelumnya akan hilang dan dibuat ulang ketika kita login kembali.
+
+- Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+
+- Melakukan add-commit-push ke GitHub.
+Lakukan addd-commit-push ke Github dengan cara:
+git add .
+git commit -m "ini pesan commit"
+git push -u origin master
 
 TUGAS 3 - PBP
 

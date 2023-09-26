@@ -29,7 +29,7 @@
 </nav>
 
 <h5>Name: </h5>
-<p>Aulia Rizqi Hidayatunnisa</p> <!-- Ubahlah sesuai dengan nama kamu -->
+<p>{{name}}</p> <!-- Ubahlah sesuai dengan nama kamu -->
 <h5>Class: </h5>
 <p>PBP B</p> <!-- Ubahlah sesuai dengan kelas kamu -->
 <h5>Student NPM: </h5>
@@ -61,10 +61,19 @@
     <td>{{product.description}}</td>
     <td>{{product.date_added}}</td>
 </tr>
+
 {% endfor %}
 </table>
 
 <br />
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
+<a href="{% url 'main:logout' %}">
+  <button>
+      Logout
+  </button>
+</a>
 
 <a href="{% url 'main:create_product' %}">
 <button>
