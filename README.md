@@ -17,7 +17,7 @@ Jawab: salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen H
 
 Manfaat penggunaan element selector dan waktu yang tepat untuk menggunakannya:
 
-- ketika ingin mengganti gaya semua elemen dengan nama tertentu dalam dokumen HTML, misal ingin mengubah gaya semua elemen <p> atau semua elemen <h1> dapat menggunakan element selector untuk melakukan perubahan ini secara konsisten di seluruh halaman web.
+- ketika ingin mengganti gaya semua elemen dengan nama tertentu dalam dokumen HTML, misal ingin mengubah gaya semua elemen dapat menggunakan element selector untuk melakukan perubahan ini secara konsisten di seluruh halaman web.
    
 - ketika ingin menimpa gaya yang sudah ada dan memberikan gaya yang lebih spesifik dan akan menggantikan gaya yang sudah ada. Jika Anda ingin mengubah gaya elemen yang sudah memiliki definisi gaya dalam CSS lain, element selector dapat digunakan untuk memberikan gaya yang lebih spesifik dan akan menggantikan gaya yang sudah ada.
 
