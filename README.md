@@ -17,20 +17,11 @@ Jawab: salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen H
 
 Manfaat penggunaan element selector dan waktu yang tepat untuk menggunakannya:
 
-- ketika ingin mengganti gaya semua elemen dengan nama tertentu dalam dokumen HTML, misal ingin mengubah gaya semua elemen <p> atau semua elemen <h1> dengan cara p {
-    font-size: 16px;
-    color: #333;
-}
-- ketika ingin menimpa gaya yang sudah ada dan memberikan gaya yang lebih spesifik dan akan menggantikan gaya yang sudah ada. Contoh : 
-h1 {
-    color: #FF0000; /* Merah */
-}
+- ketika ingin mengganti gaya semua elemen dengan nama tertentu dalam dokumen HTML, misal ingin mengubah gaya semua elemen <p> atau semua elemen <h1> dapat menggunakan element selector untuk melakukan perubahan ini secara konsisten di seluruh halaman web.
+   
+- ketika ingin menimpa gaya yang sudah ada dan memberikan gaya yang lebih spesifik dan akan menggantikan gaya yang sudah ada. Jika Anda ingin mengubah gaya elemen yang sudah memiliki definisi gaya dalam CSS lain, element selector dapat digunakan untuk memberikan gaya yang lebih spesifik dan akan menggantikan gaya yang sudah ada.
 
-/* Menimpa gaya h1 yang sudah ada */
-h1 {
-    color: #00FF00; /* Hijau */
-}
-
+- Ketika ingin mengganti gaya pada elemen tertentu dalam konteks tertentu. Element selector dapat digunakan untuk mengubah gaya elemen tertentu dalam konteks tertentu. Misalnya, jika ingin mengubah gaya elemen <p> hanya dalam div dengan class tertentu, dapat menggunakan kombinasi element selector dengan class selector atau ID selector.
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
 Jawab: Tag adalah suatu tanda pengenal dokumen pada html yang terdiri 2 bagian yaitu tag pembuka contoh <nama_tag> dan tag penutup contoh </nama_tag>, tanda "/" pada tag penutup menandakan bahwa sifat yang dibawa oleh tanda pengenal berakhir. Namun ada beberapa Tag yang berdiri sendiri diantaranya : <br/>, <hr/>, <img src="" />. Tag - tag ini bersifat unik karena tag ini tidak perlu menggunakan tag penutup.
