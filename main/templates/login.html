@@ -6,40 +6,64 @@
 
 {% block content %}
 
-<div class = "login">
+<style>
+    /* Tambahkan CSS kustom di sini untuk halaman login */
+    .login {
+        background-color: #ffc0cb; /* Warna latar belakang */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Tinggi minimum untuk memenuhi seluruh layar */
+    }
 
-    <h1>Login</h1>
+    .login-form {
+        background-color: #ff69b4; /* Warna latar belakang formulir */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        max-width: 300px; /* Lebar maksimum formulir */
+    }
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+    .form-group {
+        margin-bottom: 10px;
+    }
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+    .login-btn {
+        background-color: #b22222; /* Warna tombol login */
+        color: #ffffff; /* Warna teks tombol */
+    }
+</style>
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
+<div class="login">
+    <div class="login-form">
+        <h1>Login</h1>
 
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <input class="btn login-btn" type="submit" value="Login">
+            </div>
+        </form>
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
+    </div>
 </div>
 
 {% endblock content %}

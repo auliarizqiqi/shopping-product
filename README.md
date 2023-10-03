@@ -8,6 +8,104 @@ Tautan aplikasi Adaptable : https://my-app-shopping-product.adaptable.app
 
 Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 
+TUGAS 5 - PBP
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+Jawab: salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemen HTML-nya. Setiap elemen HTML dapat diberikan selector dengan cara mengidentifikasi elemen tersebut menggunakan namanya. 
+- class selector : untuk mengelompokkan elemen dengan karakteristik yang sama.
+- ID selector : menggunakan ID pada tag sebagai selector-nya. ID bersifat unik dalam satu halaman web. ID dapat ditambahkan pada halaman template HTML.
+
+Manfaat penggunaan element selector dan waktu yang tepat untuk menggunakannya:
+
+- ketika ingin mengganti gaya semua elemen dengan nama tertentu dalam dokumen HTML, misal ingin mengubah gaya semua elemen <p> atau semua elemen <h1> dengan cara p {
+    font-size: 16px;
+    color: #333;
+}
+- ketika ingin menimpa gaya yang sudah ada dan memberikan gaya yang lebih spesifik dan akan menggantikan gaya yang sudah ada. Contoh : 
+h1 {
+    color: #FF0000; /* Merah */
+}
+
+/* Menimpa gaya h1 yang sudah ada */
+h1 {
+    color: #00FF00; /* Hijau */
+}
+
+
+2. Jelaskan HTML5 Tag yang kamu ketahui.
+Jawab: Tag adalah suatu tanda pengenal dokumen pada html yang terdiri 2 bagian yaitu tag pembuka contoh <nama_tag> dan tag penutup contoh </nama_tag>, tanda "/" pada tag penutup menandakan bahwa sifat yang dibawa oleh tanda pengenal berakhir. Namun ada beberapa Tag yang berdiri sendiri diantaranya : <br/>, <hr/>, <img src="" />. Tag - tag ini bersifat unik karena tag ini tidak perlu menggunakan tag penutup.
+
+Contoh tag:
+- <html> adalah tag untuk membuat sebuah dokumen baru
+- <title> adalah tag untuk membuat judul dari sebuah halaman
+- <body> adalah tag untuk membuar body/tubuh dari sebuah halaman
+- <p> adalah tag untuk membuat paragraf
+- <button> adalah tag untuk membuat sebuah tombol yang dapat diklik
+
+sumber: https://codepolitan.com/blog/pengenalan-html5-belajar-html
+
+https://gilacoding.com/read/tag-tag-pada-html-beserta-fungsinya
+
+3. Jelaskan perbedaan antara margin dan padding.
+Jawab: Margin: mengosongkan area di sekitar border (transparan), sedangkan Padding: mengosongkan area di sekitar konten (transparan).
+Dalam CSS, margin adalah ruang di sekitar batas elemen, sedangkan padding adalah ruang antara batas elemen dan konten elemen. Dengan kata lain, properti margin mengontrol ruang di luar elemen, dan properti padding mengontrol ruang di dalam elemen.
+Kegunaan margin:
+- mengubah posisi elemen pada halaman
+- atur jarak antar elemen terdekat
+- menginginkan elemen yang tumpang tindih
+
+Kegunaan padding;
+- menambahkan spasi antara content dan border
+- mengubah ukuran element
+
+sumber: https://blog.hubspot.com/website/css-margin-vs-padding
+
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Jawab: Perbedaan framework CSS Tailwind dan Bootstrap dari berbagai aspek:
+- Desain
+Bootstrap sering kali menghasilkan tampilan yang lebih konsisten di seluruh proyek karena menggunakan komponen yang telah didefinisikan.Sedangkan tailwind memberikan fleksibilitas dan adaptabilitas tinggi terhadap proyek
+
+- Fleksibilitas
+Bootstrap menggunakan gaya dan komponen yang telah didefinisikan, yang memiliki tampilan yang sudah jadi dan dapat digunakan secara langsung. Sedangkan tailwind membangun tampilan dengan menggabungkan kelas-kelas utilitas yang telah didefinisikan sebelumnya.
+
+- Ukuran File
+Bootstrap memiliki file CSS yang lebih besar dibandingkan dengan Tailwind CSS karena termasuk banyak komponen yang telah didefinisikan. Sedangkan tailwind CSS memiliki file CSS yang lebih kecil sedikit dibandingkan Bootstrap dan hanya akan memuat kelas-kelas utilitas yang ada.
+
+- Pembelajaran
+Bootstrap memiliki pembelajaran yang lebih cepat untuk pemula karena dapat mulai dengan komponen yang telah didefinisikan. Sedangkan tailwind CSS memiliki pembelajaran yang lebih curam karena memerlukan pemahaman terhadap kelas-kelas utilitas yang tersedia dan bagaimana menggabungkannya untuk mencapai tampilan yang diinginkan.
+
+Sebaiknya kita menggunakan Bootstrap daripada Tailwind ketika kita ingin membuat proyek dengan desain tradisional yang membutuhkan kerangka kerja yang stabil dan mudah digunakan, memerlukan fitur dan komponen yang siap pakai, dan direkomendasikan untuk pemula karena dapat mulai dengan komponen yang telah didefinisikan. 
+Namun, sebaiknya kita menggunakan Tailwind daripada Bootstrap ketika kita ingin menggunakan class yang sangat spesifik, dan memberikan kebebasan kreatif, serta membutuhkan ukuran file yang lebih ringan dan ketika kita menggunakan banyak class utilitas dalam kode, ukuran file CSS dapat meningkat.
+
+sumber: tutorial 4 PBP
+
+https://codepolitan.com/blog/perbedaan-bootstrap-dan-tailwind
+
+
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Jawab:
+-  Kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma) dengan ketentuan sebagai berikut: 
+    -  Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.
+    - Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.
+
+Saya menambahkan inventori berupa size atau ukuran dari produk tersebut menggunakan charField. Kustomisasi halaman login dan register dengan memberikan warna dan mengubah letak bar login agar berada di tengah dengan menambahkan potongan kode di file main.html
+Saya juga menggunakan card yang sumbernya saya peroleh dari https://getbootstrap.com/docs/5.3/components/card/ menggunakan bootstrap pada halaman main.html 
+Kemudian saya menambahkan fitur edit pada aplikasi dengan membuat fungsi baru bernama edit_product di file views.py yang ada pada subdeirektori main yang menerima parameter request dan id. Lalu membuat berkas html baru dengan nama edit_product.html pada subdirektori main/templates. Isi berkas tersebut dengan template potongan kode. Buka urls.py yang berada pada direktori main dan import fungsi edit_product yang sudah dibuat. Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi. Buka main.html yang berada pada subdirektori main/templates. Tambahkan potongan kode berikut sejajar dengan elemen <td> terakhir agar terlihat tombol edit pada setiap baris tabel.
+
+Kemudian saya membuat fungsi untuk menghapus data produk dengan membuat fungsi baru dengan nama delete_product yang menerima parameter request dan id pada views.py di folder main untuk menghapus data produk. Buka urls.py yang ada pada folder main dan impor fungsi yang sudah dibuat tadi. Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor. Bukalah berkas main.html yang ada pada folder main/templates dan ubahlah kode yang sudah ada menjadi seperti berikut agar terdapat tombol hapus untuk setiap produk.
+
+- Menjawab beberapa pertanyaan berikut pada README.md pada root folder (silakan modifikasi README.md yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+Menjawab semua pertanyaan di README.md, saya berikan keterangan setiap jawaban merupakan tugas ke berapa. 
+
+- Melakukan add-commit-push ke GitHub.
+Buka terminal dan masukkan perintah berikut untuk melakukan push ke Github:
+git add .
+git commit -m "tugas 5 selesai"
+git push -u origin master
+
+
 TUGAS 4 - PBP
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 Jawab: UserCreationForm adalah impor formulir bawaan yang memudahkan pembuatan formulir pendaftaran pengguna dalam aplikasi web. Dengan formulir ini, pengguna baru dapat mendaftar dengan mudah di situs web Anda tanpa harus menulis kode dari awal.

@@ -11,29 +11,69 @@
       padding: 20px; 
       border: 1px solid 
   }
+
+  .last-row {
+    background-color: #E0E0E0;  /* Contoh warna abu-abu untuk background */
+    color: #000000;  /* Contoh warna teks hitam */
+}
+  
 </style>
+
 
 <div class="content-container">
 
+
 <h1>Shopping Product Page</h1>
+
+    
+<nav class="navbar" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SHOPPING PRODUCT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">{{name}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Checkout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Click This
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Voucher</a></li>
+                <li><a class="dropdown-item" href="#">Discount</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+      <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+    </nav>
+</nav>
 
 <p><strong>Apa Itu Shopping Product?</strong></p>
 <p>Tempat dimana kamu bisa beli jaket-jaketan!</p>
 
-<nav>
-  <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Cart</a></li>
-      <li><a href="#">Checkout</a></li>
-  </ul>
-</nav>
 
 <h5>Name: </h5>
 <p>{{name}}</p> <!-- Ubahlah sesuai dengan nama kamu -->
-<h5>Class: </h5>
-<p>PBP B</p> <!-- Ubahlah sesuai dengan kelas kamu -->
-<h5>Student NPM: </h5>
-<p>2206817881</p>
 
  {% comment %} Hitung jumlah total item di sini (misalnya, dalam variabel total_items) {% endcomment %}
  {% with total_items=products|length %}
@@ -47,19 +87,45 @@
       <th>Price</th>
       <th>Description</th>
       <th>Date Added</th>
+      <th>Size</th>
      
     </tr>
   </tr>
 
+  <div class="card border-success mb-3" style="width: 100%; background-color: #E75480;">
+    <div class="card-header bg-transparent border-success">SELAMAT BERBELANJA JAKET!</div>
+    <div class="card-body text-success">
+      <h5 class="card-title">Tersedia berbagai jenis jaket</h5>
+      <p class="card-text">Jaket kualitas tinggi dengan bahan yang terjamin nyaman dengan harga yang terjangkau</p>
+    </div>
+    <div class="card-footer bg-transparent border-success"></div>
+  </div>
+  
+  <h5> </h5>
+  <h5> </h5>
+
   {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
   {% for product in products %}
-  <tr>
+  <tr {% if forloop.last %}class="last-row"{% endif %}>
     <td>{{product.name}}</td>
     <td>{{product.amount}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>{{product.date_added}}</td>
+    <td>{{product.size}}</td>
+    <td>
+      <a href="{% url 'main:edit_product' product.pk %}">
+          <button>
+              Edit
+          </button>
+      </a>
+      <a href="{% url 'main:delete_product' product.pk %}">
+            <button>
+                Delete
+            </button>
+        </a>
+  </td>
 </tr>
 
 {% endfor %}
