@@ -24,7 +24,7 @@ Manfaat penggunaan element selector dan waktu yang tepat untuk menggunakannya:
 - Ketika ingin mengganti gaya pada elemen tertentu dalam konteks tertentu. Element selector dapat digunakan untuk mengubah gaya elemen tertentu dalam konteks tertentu. Misalnya, jika ingin mengubah gaya elemen <p> hanya dalam div dengan class tertentu, dapat menggunakan kombinasi element selector dengan class selector atau ID selector.
 
 2. Jelaskan HTML5 Tag yang kamu ketahui.
-Jawab: Tag adalah suatu tanda pengenal dokumen pada html yang terdiri 2 bagian yaitu tag pembuka contoh <nama_tag> dan tag penutup contoh </nama_tag>, tanda "/" pada tag penutup menandakan bahwa sifat yang dibawa oleh tanda pengenal berakhir. Namun ada beberapa Tag yang berdiri sendiri diantaranya : <br/>, <hr/>, <img src="" />. Tag - tag ini bersifat unik karena tag ini tidak perlu menggunakan tag penutup.
+Jawab: Tag adalah sebuah penanda awalan dan akhiran dari sebuah elemen di HTML. Tag dibuat dengan kurung siku (<...>), lalu di dalamnya berisi nama tag dan kadang juga ditambahkan dengan atribut. Tag selalu ditulis berpasangan. Ada tag pembuka dan ada tag penutupnya. Namun, ada juga beberapa tag yang tidak memiliki pasangan penutup. Tag penutup ditulis dengan menambahkan garis miring (/) di depan nama tag.
 
 Contoh tag:
 - <html> adalah tag untuk membuat sebuah dokumen baru
@@ -36,6 +36,8 @@ Contoh tag:
 sumber: https://codepolitan.com/blog/pengenalan-html5-belajar-html
 
 https://gilacoding.com/read/tag-tag-pada-html-beserta-fungsinya
+
+https://www.petanikode.com/html-tag-elemen-atribut/
 
 3. Jelaskan perbedaan antara margin dan padding.
 Jawab: Margin: mengosongkan area di sekitar border (transparan), sedangkan Padding: mengosongkan area di sekitar konten (transparan).
