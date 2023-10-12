@@ -8,7 +8,51 @@ Tautan aplikasi Adaptable : https://my-app-shopping-product.adaptable.app
 
 Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 
-TUGAS 5 - PBP
+# TUGAS 6 - PBP
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+Jawab: Asynchronous programming merupakan sebuah pendekatan pemrograman yang tidak terikat pada input output (I/O)  protocol. Ini menandakan bahwa pemrograman asynchronous tidak melakukan pekerjaannya secara old style / cara lama yaitu dengan eksekusi baris program satu persatu secara hirarki. Asynchronous programming melakukan pekerjaannya tanpa harus terikat dengan proses lain atau dapat kita sebut secara Independent. Berbeda dengan asynchronous, synchronous programming memiliki pendekatan yang lebih old style. Task akan dieksekusi satu persatu sesuai dengan urutan dan prioritas task. Hal ini memiliki kekurangan pada lama waktu eksekusi karena masing-masing task harus menunggu task lain selesai untuk diproses terlebih dahulu.
+Perbedaan antara asynchronous programming dengan synchronous programming:
+- Asynchronous Programming:
+    - - Tugas-tugas dieksekusi secara non-blokir, artinya program tidak perlu menunggu satu tugas selesai sebelum menjalankan yang lain.
+    - Tugas-tugas dapat berjalan secara bersamaan, sehingga aplikasi tetap responsif.
+    -  Digunakan untuk menangani operasi I/O, jaringan, atau tugas yang memerlukan waktu lama.
+
+- Synchronous Programming:
+   - Tugas-tugas dieksekusi secara berurutan, satu per satu
+    - Program akan menunggu satu tugas selesai sebelum melanjutkan ke tugas berikutnya.
+    - Dapat menyebabkan blocking, di mana aplikasi menjadi lambat atau tidak responsif jika ada tugas yang memerlukan waktu lama.
+
+Sumber: https://binus.ac.id/malang/2022/05/asynchronous-vs-synchronous-programming/
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Jawab: Event-Driven Programming adalah salah satu teknik pemogramman, yang konsep kerjanya tergantung dari kejadian atau event tertentu. Ketika program merespon peristiwa (events) yang terjadi, seperti klik mouse, penekanan tombol, atau permintaan data dari server. 
+
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+Jawab: AJAX atau Asynchronous JavaScript and XML adalah teknik yang digunakan untuk membuat website yang dinamis. Artinya website mampu mengupdate dan menampilkan data baru dari server tanpa perlu melakukan reload. AJAX JavaScript dan XML ini bekerja secara asynchronous untuk berkomunikasi dengan server. Proses pertukaran informasi ini dilakukan di background. Artinya, saat AJAX JavaScript dan XML bekerja, halaman dapat tetap diakses oleh pengunjung website. Cara kerjanya adalah sebagai berikut, browser menggunakan AJAX JavaScript untuk mengaktifkan XMLHttpRequest dan mengirim permintaan HTTP ke server. XMLHttpRequest diciptakan untuk memfasilitasi pertukaran data asinkron antara browser dan server. Setelah menerima permintaan, server memprosesnya dan mengirimkan data sebagai respons. Data ini kemudian langsung ditampilkan di halaman website tanpa memerlukan proses reload atau pembuatan halaman baru.
+
+Sumber: https://www.niagahoster.co.id/blog/ajax-javascript/
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Jawab: Perbandingan antara  Fetch API dan jQuery dalam penerapan AJAX:
+- Fetch API adalah bagian dari JavaScript yang lebih modern dan terintegrasi dengan bahasa itu sendiri, sementara jQuery adalah library JavaScript.
+- Fetch API lebih ringan karena hanya menyediakan fitur untuk mengirim permintaan dan menangani respons, sementara jQuery adalah library yang lebih besar dengan banyak fitur tambahan.
+- Penggunaan Fetch API dapat mengurangi dependensi tambahan dalam proyek
+- jQuery bisa lebih mudah digunakan untuk pemula karena menyediakan metode yang lebih sederhana dan lebih mudah dibaca.
+
+Menurut saya, teknologi yang lebih baik digunakan adalah Fetch API karena terintegrasi dengan JavaScript modern yang berarti tidak perlu mengimport library tambahan sehingga mengurangi dependensi eksternal. Fetch API juga memiliki ukuran yang lebih kecil sehingga lebih ringan mempercepat waktu pemuatan halaman. Dengan menggunakan Fetch API yang memanfaatkan promise, yang mempermudah penanganan permintaan dan respons asinkron. Anda dapat dengan mudah menggunakan async/await untuk menulis kode yang bersih dan mudah dipahami.
+
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Jawab:
+
+
+
+
+
+
+
+# TUGAS 5 - PBP
 
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 Jawab: salah satu jenis selector dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemen HTML-nya. Setiap elemen HTML dapat diberikan selector dengan cara mengidentifikasi elemen tersebut menggunakan namanya. 

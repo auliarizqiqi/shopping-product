@@ -1,96 +1,69 @@
 {% extends 'base.html' %}
+
 {% block content %}
+    <h1>Shopping Product Page</h1>
 
-<style>
-  
-  h1 {
-      color: #007BFF ;
-  }
-  .content-container {
-      background-color: #FFC0CB; 
-      padding: 20px; 
-      border: 1px solid 
-  }
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+      <!-- Navbar content -->
+      </nav>
 
-  .last-row {
-    background-color: #E0E0E0;  /* Contoh warna abu-abu untuk background */
-    color: #000000;  /* Contoh warna teks hitam */
-}
-  
-</style>
-
-
-<div class="content-container">
-
-
-<h1>Shopping Product Page</h1>
-
-    
-<nav class="navbar" style="background-color: #e3f2fd;">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">SHOPPING PRODUCT</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">{{name}}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Checkout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Click This
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Voucher</a></li>
-                <li><a class="dropdown-item" href="#">Discount</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-  </nav>
-      <nav class="navbar bg-body-tertiary">
-          <div class="container-fluid">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+      <nav class="navbar" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">SHOPPING PRODUCT</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">{{name}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Checkout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Click This
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Voucher</a></li>
+                      <li><a class="dropdown-item" href="#">Discount</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
         </nav>
-    </nav>
-</nav>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+          </nav>
+      </nav>
 
-<p><strong>Apa Itu Shopping Product?</strong></p>
-<p>Tempat dimana kamu bisa beli jaket-jaketan!</p>
+    <p><strong>Apa Itu Shopping Product?</strong></p>
+    <p>Tempat dimana kamu bisa beli jaket-jaketan!</p>
 
 
-<h5>Name: </h5>
-<p>{{name}}</p> <!-- Ubahlah sesuai dengan nama kamu -->
+    <h5>Name: </h5>
+    <p>{{name}}</p>
 
- {% comment %} Hitung jumlah total item di sini (misalnya, dalam variabel total_items) {% endcomment %}
- {% with total_items=products|length %}
- <p>Hore! Kamu punya {{ total_items }} barang untuk di-checkout sekarangg!.</p>
- {% endwith %}
+    <table id="product_table"></table> 
+    </table>
 
-  <table border="2", bordercolor="blue">
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Date Added</th>
-      <th>Size</th>
-     
-    </tr>
-  </tr>
+  {% comment %} Hitung jumlah total item di sini (misalnya, dalam variabel total_items) {% endcomment %}
+  {% with total_items=products|length %}
+  <p>Hore! Kamu punya {{ total_items }} barang untuk di-checkout sekarangg!.</p>
+  {% endwith %}
+
 
   <div class="card border-success mb-3" style="width: 100%; background-color: #E75480;">
     <div class="card-header bg-transparent border-success">SELAMAT BERBELANJA JAKET!</div>
@@ -106,45 +79,97 @@
 
   {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-  {% for product in products %}
-  <tr {% if forloop.last %}class="last-row"{% endif %}>
-    <td>{{product.name}}</td>
-    <td>{{product.amount}}</td>
-    <td>{{product.price}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.date_added}}</td>
-    <td>{{product.size}}</td>
-    <td>
-      <a href="{% url 'main:edit_product' product.pk %}">
-          <button>
-              Edit
-          </button>
-      </a>
-      <a href="{% url 'main:delete_product' product.pk %}">
-            <button>
-                Delete
-            </button>
-        </a>
-  </td>
-</tr>
 
-{% endfor %}
-</table>
+    <br />
 
-<br />
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
 
-<a href="{% url 'main:logout' %}">
-  <button>
-      Logout
-  </button>
-</a>
 
-<a href="{% url 'main:create_product' %}">
-<button>
-Add New Product
-</button>
-</a>
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
+        </button>
+    </a>
 
-{% endblock content %}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method = "POST" id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+
+<script>
+  async function getProducts() {
+      return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+  }
+
+  async function refreshProducts() {
+    document.getElementById("product_table").innerHTML = ""
+    const products = await getProducts()
+    let htmlString = `<tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Date Added</th>
+    </tr>`
+    products.forEach((item) => {
+        htmlString += `\n<tr>
+        <td>${item.fields.name}</td>
+        <td>${item.fields.price}</td>
+        <td>${item.fields.description}</td>
+        <td>${item.fields.date_added}</td>
+    </tr>` 
+    })
+    
+    document.getElementById("product_table").innerHTML = htmlString
+}
+
+refreshProducts()
+
+function addProduct() {
+  fetch("{% url 'main:add_product_ajax' %}", {
+      method: "POST",
+      body: new FormData(document.querySelector('#form'))
+  }).then(refreshProducts)
+
+  document.getElementById("form").reset()
+  return false
+}
+
+document.getElementById("button_add").onclick = addProduct
+</script>
+
+    {% endblock content %}
