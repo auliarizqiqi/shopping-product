@@ -8,6 +8,8 @@ Tautan aplikasi Adaptable : https://my-app-shopping-product.adaptable.app
 
 Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 
+Tautan aplikasi : http://aulia-rizqi21-tugas.pbp.cs.ui.ac.id
+
 # TUGAS 6 - PBP
 
 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
