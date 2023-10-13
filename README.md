@@ -9,6 +9,7 @@ Tautan aplikasi Adaptable : https://my-app-shopping-product.adaptable.app
 Tautan repository : https://github.com/auliarizqiqi/shopping-product.git
 
 # TUGAS 6 - PBP
+
 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 Jawab: Asynchronous programming merupakan sebuah pendekatan pemrograman yang tidak terikat pada input output (I/O)  protocol. Ini menandakan bahwa pemrograman asynchronous tidak melakukan pekerjaannya secara old style / cara lama yaitu dengan eksekusi baris program satu persatu secara hirarki. Asynchronous programming melakukan pekerjaannya tanpa harus terikat dengan proses lain atau dapat kita sebut secara Independent. Berbeda dengan asynchronous, synchronous programming memiliki pendekatan yang lebih old style. Task akan dieksekusi satu persatu sesuai dengan urutan dan prioritas task. Hal ini memiliki kekurangan pada lama waktu eksekusi karena masing-masing task harus menunggu task lain selesai untuk diproses terlebih dahulu.
 Perbedaan antara asynchronous programming dengan synchronous programming:
