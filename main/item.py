@@ -9,7 +9,4 @@ class Product(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     size = models.CharField(max_length=255, default=" ")
-    #image = models.ImageField(upload_to='product_images/', blank=True, null=True)
-    
-    # def __str__(self):
-    #     return self.name
+  

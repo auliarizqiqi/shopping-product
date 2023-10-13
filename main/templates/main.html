@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<style>
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  
+  table, th, td {
+      border: 1px solid #000; /* Warna garis dan ketebalan garis */
+  }
+
+  th, td {
+      padding: 8px; /* Spasi antara isi sel dengan garis */
+  }
+</style>
+
     <h1>Shopping Product Page</h1>
 
     <nav class="navbar bg-primary" data-bs-theme="dark">
@@ -50,14 +66,17 @@
       </nav>
 
     <p><strong>Apa Itu Shopping Product?</strong></p>
-    <p>Tempat dimana kamu bisa beli jaket-jaketan!</p>
+    <p>Tempat dimana kamu bisa beli jaket, hoodie, sepatu, dan lainnya!</p>
 
 
     <h5>Name: </h5>
     <p>{{name}}</p>
 
-    <table id="product_table"></table> 
-    </table>
+  <div style="background-color: #a7dbd8;">
+    <table id="product_table" style="background-color: #ADD8E6;"></table>
+  </div>
+  
+        
 
   {% comment %} Hitung jumlah total item di sini (misalnya, dalam variabel total_items) {% endcomment %}
   {% with total_items=products|length %}

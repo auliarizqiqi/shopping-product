@@ -25,7 +25,8 @@ Perbedaan antara asynchronous programming dengan synchronous programming:
 Sumber: https://binus.ac.id/malang/2022/05/asynchronous-vs-synchronous-programming/
 
 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
-Jawab: Event-Driven Programming adalah salah satu teknik pemogramman, yang konsep kerjanya tergantung dari kejadian atau event tertentu. Ketika program merespon peristiwa (events) yang terjadi, seperti klik mouse, penekanan tombol, atau permintaan data dari server. 
+Jawab: Event-Driven Programming adalah salah satu teknik pemogramman, yang konsep kerjanya tergantung dari kejadian atau event tertentu. Ketika program merespon peristiwa (events) yang terjadi, seperti klik mouse, penekanan tombol, atau permintaan data dari server. Contoh penerapan paradigma event-driven programming pada tugas ini adalah penggunaan JavaScript dan AJAX untuk mengambil dan menampilkan data produk ke dalam tabel. 
+- Event Listener: JavaScript menambahkan event listener ke HTML yaitu "Add Product by AJAX", ketika user mengklik tombol ini, maka event click akan terjadi. Kemudian, ketika user mengkilk tombol, JavaScript akan meresponsnya dengan menjalankan addProduct yang gunanya untuk mengambil data produk yang dimasukkan oleh user, mengirim permintaan AJAX untuk menambahkan produk ke server, dan memperbarui tabel produk dengan data terbaru setelah operasi selesai. 
 
 
 3. Jelaskan penerapan asynchronous programming pada AJAX.
@@ -45,10 +46,18 @@ Menurut saya, teknologi yang lebih baik digunakan adalah Fetch API karena terint
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 Jawab:
-
-
-
-
+- Membuat fungsi untuk mengambil data JSON (views.py)
+Pada tahap awal, buat fungsi baru bernama get_product_json di berkas views.py. Fungsi ini bertujuan untuk mengembalikan data JSON, untuk menampilkan data produk pada HTML dengan menggunakan fetch API.
+- Membuat fungsi untuk menambahkan produk dengan AJAX (views.py)
+Selanjutnya buat fungsi dengan nama add_product_ajax pada views untuk menambahkan produk baru ke basis data dengan AJAX. Fungsi tersbeut menerima parameter request. Lalu import libabry yang dibutuhkan, dan tambahkan dekorator di atas fungsi tersebut.
+- Menambahkan routing untuk fungsi get_product_json dan add_product_ajax
+Memperluas berkas urls.py dengan menambahkan URL baru yang mengarahkan ke kedua fungsi yang telah dibuat sebelumnya. Buka berkas urls.py pada folder main dan impor fungsi get_product_json serta add_product_ajax. Kemudian tambahkan path url kedua fungsi ke dalam urlpatterns.
+- Menampilkan data product dengan fetch() API 
+Langkah selanjutnya adalah memanfaatkan fetch API untuk mengambil data dari server secara asinkron. Buka berkas main.html pada main/templates dan hapus bagian kode table yang dibuat di tugas sebelumnya, tambahkan potongan kode sebagai struktur table, buat block Script dan buat beberapa fungsi baru pada blok tersebut.
+- Membuat modal sebagai form untuk menambahkan produk
+Menambahkan potongan kode untuk mengimplementasikan modal (Bootstrap) pada aplikasi. Modal ni akan muncul ketika pengguna mengeklik tombol "Add Product by AJAX".
+- Menambahkan data product dengan AJAX
+Perlu membuat fungsi JavaScript baru untuk menambahkan data berdasarkan input ke basis data secara AJAX. Buat fungsi baru pada block Script dan isi dengan potongan kode. Tambahkan fungsi onclick dan potongan kodenya untuk menjalankan fungsi addProduct. Dalam hal ini, data dari formulir akan diambil dan dikirimkan melalui permintaan POST ke server. Pengguna dapat secara dinamis menambahkan produk tanpa perlu memuat ulang halaman.
 
 
 
@@ -71,11 +80,11 @@ Manfaat penggunaan element selector dan waktu yang tepat untuk menggunakannya:
 Jawab: Tag adalah sebuah penanda awalan dan akhiran dari sebuah elemen di HTML. Tag dibuat dengan kurung siku (<...>), lalu di dalamnya berisi nama tag dan kadang juga ditambahkan dengan atribut. Tag selalu ditulis berpasangan. Ada tag pembuka dan ada tag penutupnya. Namun, ada juga beberapa tag yang tidak memiliki pasangan penutup. Tag penutup ditulis dengan menambahkan garis miring (/) di depan nama tag.
 
 Contoh tag:
-- <html> adalah tag untuk membuat sebuah dokumen baru
-- <title> adalah tag untuk membuat judul dari sebuah halaman
-- <body> adalah tag untuk membuar body/tubuh dari sebuah halaman
-- <p> adalah tag untuk membuat paragraf
-- <button> adalah tag untuk membuat sebuah tombol yang dapat diklik
+- html adalah tag untuk membuat sebuah dokumen baru
+- title adalah tag untuk membuat judul dari sebuah halaman
+- body adalah tag untuk membuar body/tubuh dari sebuah halaman
+- p adalah tag untuk membuat paragraf
+- button adalah tag untuk membuat sebuah tombol yang dapat diklik
 
 sumber: https://codepolitan.com/blog/pengenalan-html5-belajar-html
 
@@ -143,7 +152,8 @@ git commit -m "tugas 5 selesai"
 git push -u origin master
 
 
-TUGAS 4 - PBP
+# TUGAS 4 - PBP
+
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 Jawab: UserCreationForm adalah impor formulir bawaan yang memudahkan pembuatan formulir pendaftaran pengguna dalam aplikasi web. Dengan formulir ini, pengguna baru dapat mendaftar dengan mudah di situs web Anda tanpa harus menulis kode dari awal.
 
@@ -202,7 +212,7 @@ git add .
 git commit -m "ini pesan commit"
 git push -u origin master
 
-TUGAS 3 - PBP
+# TUGAS 3 - PBP
 
 1. Apa perbedaan antara form POST dan form GET dalam Django?
 Jawab: form POST adalah metode untuk mengirim data dari browser ke server menggunakan metode HTTP POST. Form GET adalah metode untuk mengirim data dari browser ke server menggunakan metode HTTP GET. Terdapat perbedaan antara keduanya, yaitu:
@@ -301,7 +311,7 @@ Gambar Postman - JSON by ID 4
 - Melakukan add-commit-push ke GitHub.
 Tambahkan semua perubahan ke repositori Github menggunakan perintah git add, git commit, dan git push. Pastikan projek di Github sudah terupdate.
 
-TUGAS 2 
+# TUGAS 2 
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
