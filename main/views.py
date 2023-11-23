@@ -1,27 +1,23 @@
+import json
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, JsonResponse
 from main.forms import ProductForm
 from django.urls import reverse
-
-from main.item import Product
 from django.http import HttpResponse
 from django.core import serializers
-
+from main.item import Product
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages  
-from django.contrib.auth import authenticate, login
+from django.contrib import messages 
+from django.contrib.auth import authenticate, login 
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.http import *
 from django.http import HttpResponseRedirect
-from django.urls import reverse
-
-from django.shortcuts import render
-
-
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -144,3 +140,39 @@ def add_product_ajax(request):
 
         return HttpResponse(b"CREATED", status=201)
     return HttpResponseNotFound()
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_product = Product.objects.create(
+            user = request.user,
+            name = data["name"],
+            amount = int(data["amount"]),
+            price = int(data["price"]),
+            description = data["description"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+    
+def show_json_by_user(request):
+    data = Product.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def delete_product_ajax(request):
+    if request.method == "POST":
+        product_id = request.POST.get('product_id')
+        try:
+            product = Product.objects.get(pk=product_id)
+            product.delete()
+            return JsonResponse({'message': 'Product deleted successfully.'})
+        except Product.DoesNotExist:
+            return JsonResponse({'message': 'Product not found.'}, status=404)
+    return JsonResponse({'message': 'Invalid request method.'}, status=400)

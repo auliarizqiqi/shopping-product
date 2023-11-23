@@ -1,12 +1,8 @@
-import json
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login as auth_login
-from django.contrib.auth import logout as auth_logout
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
-
-
 
 @csrf_exempt
 def login(request):
@@ -34,60 +30,26 @@ def login(request):
             "status": False,
             "message": "Login gagal, periksa kembali email atau kata sandi."
         }, status=401)
-
+    
 @csrf_exempt
 def register(request):
-    if request.method == 'POST':
-        # print(request.body)
-        data = json.loads(request.body)
+    username = request.POST.get('username')
+    password = request.POST.get('password')
 
-        username = data["username"]
-        password1 = data["password1"]
-        password2 = data["password2"]
+    if User.objects.filter(username=username).exists():
+        return JsonResponse({"status": False, "message": "Username sudah digunakan."}, status=400)
 
-        if password1 != password2:
-            return JsonResponse({'status': 'failed', 'message': 'Gagal woi'})
+    user = User.objects.create_user(username=username, password=password)
+    user.save()
 
-        new_user = User.objects.create_user(username = username, password = password1)
-        new_user.save()
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error"}, status=401)
-
-
+    return JsonResponse({"username": user.username, "status": True, "message": "Register successful!"}, status=201)
+    
+    
 @csrf_exempt
 def logout(request):
     username = request.user.username
-
     try:
         auth_logout(request)
-        return JsonResponse({
-            "username": username,
-            "status": True,
-            "message": "Logout berhasil!"
-        }, status=200)
+        return JsonResponse({"username": username, "status": True, "message": "Logout successful!"}, status=200)
     except:
-        return JsonResponse({
-        "status": False,
-        "message": "Logout gagal."
-        }, status=401)
-    
-    
-@csrf_exempt
-def create_product_flutter(request):
-    if request.method == 'POST':
-        
-        data = json.loads(request.body)
-
-        new_product = Product.objects.create(
-            user = request.user,
-            name = data["name"],
-            price = int(data["price"]),
-            description = data["description"]
-        )
-
-        new_product.save()
-
-        return JsonResponse({"status": "success"}, status=200)
-    else:
-        return JsonResponse({"status": "error"}, status=401)
+        return JsonResponse({"status": False, "message": "Logout failed!"}, status=401)
